@@ -1,0 +1,17 @@
+<div>
+
+	<ul class="children">
+		<li ng-repeat="c in $root.children" class="child">
+			child
+		</li>
+	</ul>
+
+	<button class="liadder" ng-click="$root.children.push({})">Add</button>
+
+	<br/><br/><br/><br/><br/><br/>
+
+	<input type="text" class="first_name" ng-model="first"/>
+	<button id="btn_submit" ng-click="save = first">Submit</button>
+
+	<div class="output">{{save}}</div> 
+</div>
