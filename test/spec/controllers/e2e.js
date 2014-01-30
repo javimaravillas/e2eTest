@@ -2,12 +2,11 @@
 
 describe('Controller: E2eCtrl', function() {
 
-  var oldCount = 0; 
+  var oldCount = 0;
 
   // Initialize the controller and a mock scope
   beforeEach(function() {
     browser().navigateTo('/#/e2e');
-
   });
 
   it('Click the button: Get an extra LI element', function() {
@@ -37,5 +36,14 @@ describe('Controller: E2eCtrl', function() {
     expect(element('.output').html()).toContain('Jack');
   });
 
+
+});
+
+describe('Controller: FilterCtrl', function() {
+
+  // load the controller's module
+  beforeEach(function() {
+    browser().navigateTo('/#/filter');
+  });
 
 });

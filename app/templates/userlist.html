@@ -1,0 +1,24 @@
+<div>
+    <div ng-repeat="u in users | filter:userfilter">
+        <div ng-switch on="u.type">
+            <div class="panel panel-success" ng-switch-when="apple">
+                <div class="panel panel-heading">{{u.name}} - {{u.type}}</div>
+                <div class="panel panel-body">
+                	<usertabs ng-init="user = u"></usertabs>
+                </div>
+            </div>
+            <div class="panel panel-warning" ng-switch-when="lemon">
+                <div class="panel panel-heading">{{u.name}} - {{u.type}}</div>
+                <div class="panel panel-body">
+                	<usertabs ng-init="user = u"></usertabs>
+                </div>
+            </div>
+            <div class="panel panel-danger" ng-switch-when="cherry">
+                <div class="panel panel-heading">{{u.name}} - {{u.type}}</div>
+                <div class="panel panel-body">
+                	<usertabs ng-init="user = u"></usertabs>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

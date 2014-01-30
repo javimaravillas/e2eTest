@@ -7,7 +7,7 @@ module.exports = function(config) {
     basePath: '',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    frameworks: ['ng-scenario'],
 
     // list of files / patterns to load in the browser
     files: [
@@ -16,7 +16,6 @@ module.exports = function(config) {
       'app/bower_components/angular-route/angular-route.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
 
@@ -45,9 +44,16 @@ module.exports = function(config) {
     // - IE (only Windows)
     browsers: ['Chrome'],
 
+    plugins: [
+      'karma-ng-scenario',
+      'karma-chrome-launcher'
+    ],
 
-    // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
-    singleRun: false
+    // Uncomment the following lines if you are using grunt's server to run the tests
+    proxies: {
+      '/': 'http://localhost:9000/'
+    },
+    // URL root prevent conflicts with the site root
+    urlRoot: '_karma_'
   });
 };

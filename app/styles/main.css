@@ -77,3 +77,27 @@ body {
     border-bottom: 0;
   }
 }
+
+.ng-enter{
+  -webkit-animation: enter 0.5s ease; /* Safari 4+ */
+  -moz-animation:    enter 0.5s ease; /* Fx 5+ */
+  -o-animation:      enter 0.5s ease; /* Opera 12+ */
+  animation:         enter 0.5s ease; /* IE 10+ */
+}
+
+@-webkit-keyframes enter {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes enter {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes enter {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes enter {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}

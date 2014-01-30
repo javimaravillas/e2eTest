@@ -1,0 +1,37 @@
+<div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+        <li ng-class="{true:'active'}[tab=='info']">
+            <a ng-click="tab = 'info'">Info</a>
+        </li>
+        <li ng-class="{true:'active'}[tab=='actions']" ng-show="user.actions.length">
+            <a ng-click="tab = 'actions'">Actions</a>
+        </li>
+        <li ng-class="{true:'active'}[tab=='friends']">
+            <a ng-click="tab = 'friends'">Friends</a>
+        </li>
+    </ul>
+    <br/>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane" ng-class="{true:'active'}[tab=='info']">
+            <div><strong>Company:&nbsp;</strong>{{user.company}}</div>
+            <div><strong>Phone:&nbsp;</strong>{{user.phone}}</div>
+            <div><strong>About:&nbsp;</strong>{{user.about}}</div>
+        </div>
+        <div class="tab-pane" ng-class="{true:'active'}[tab=='actions']">
+            <ul>
+            	<li ng-repeat="t in user.actions | orderBy:'date'">
+            		{{t.date | date:'medium'}} - {{t.action}}
+            	</li>
+            </ul>
+        </div>
+        <div class="tab-pane" ng-class="{true:'active'}[tab=='friends']">
+            <ul>
+            	<li ng-repeat="t in user.friends | orderBy:'name'">
+            		{{t.name}}
+            	</li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -17,7 +17,7 @@ module.exports = function(config) {
       'app/scripts/*.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
-      'test/spec/controllers/e2e.js'
+      'test/spec/controllers/*.js',
     ],
 
     // list of files / patterns to exclude
@@ -45,6 +45,9 @@ module.exports = function(config) {
     // - IE (only Windows)
     browsers: ['Chrome'],
 
+    plugins: [
+      'karma-ng-scenario',
+    ]
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit

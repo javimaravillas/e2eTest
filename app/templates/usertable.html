@@ -1,0 +1,19 @@
+<div>
+	<h2>User Table</h2>
+	<table class="table" ng-show="users.length">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Type</th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="u in users | filter:userfilter">
+			<td>{{u.name}}</td>
+			<td>{{u.email}}</td>
+			<td>{{u.type}}</td>
+			<td>
+				<button class="btn btn-danger" ng-click="removeuser($index)">Remove</button>
+			</td>
+		</tr>
+	</table>
+</div>

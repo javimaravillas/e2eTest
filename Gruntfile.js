@@ -99,10 +99,7 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/scripts/{,*/}*.js'
       ],
       test: {
-        options: {
-          jshintrc: 'test/.jshintrc'
-        },
-        src: ['test/spec/{,*/}*.js']
+
       }
     },
 
@@ -248,7 +245,8 @@ module.exports = function (grunt) {
             '.htaccess',
             'bower_components/**/*',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'fonts/*',
+            'templates/*'
           ]
         }, {
           expand: true,
@@ -314,9 +312,6 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'karma.conf.js',
         singleRun: true
-      },
-      e2e: {
-        configFile: 'karma-e2e.conf.js'
       }
     }
   });
